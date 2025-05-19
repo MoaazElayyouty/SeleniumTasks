@@ -25,8 +25,10 @@ public class CheckBoxPage {
 
 
     public void openCheckBoxPage (){
+
         driver.findElement(checkBoxPage).click();
     }
+
     public String getCheckBoxHeader (){
       return driver.findElement(checkBoxHeader).getText();
 

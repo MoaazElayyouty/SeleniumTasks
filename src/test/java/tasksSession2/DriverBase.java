@@ -20,9 +20,9 @@ public class DriverBase {
     @AfterClass
     public void quitDriver() {
 
-        if (driver != null) {
-            driver.quit();
-        }
+//        if (driver != null) {
+//            driver.quit();
+//        }
 
     }
 }

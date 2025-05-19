@@ -7,8 +7,8 @@ import org.testng.annotations.Test;
 public class CheckBoxTests extends DriverBase{
 
 
-    @Test
-    public void TestChekBox1(){
+    @Test (priority = 1)
+    public void testChekBox1(){
 
         CheckBoxPage checkBoxpage = new CheckBoxPage(driver);
 
@@ -17,8 +17,17 @@ public class CheckBoxTests extends DriverBase{
         Assert.assertTrue(headerText.contains("Checkboxes"));
         checkBoxpage.selectCheckBox1();
         Assert.assertTrue(checkBoxpage.isCheckBox1Selected());
-        checkBoxpage.unselectCheckBox2();
-        Assert.assertFalse(checkBoxpage.isCheckBox2NotSelected());
+
 
     }
+
+    @Test (priority = 2)
+    public void testChekBox2 (){
+
+        CheckBoxPage checkBoxpage = new CheckBoxPage(driver);
+
+        checkBoxpage.unselectCheckBox2();
+        Assert.assertFalse(checkBoxpage.isCheckBox2NotSelected());
+    }
+
 }
