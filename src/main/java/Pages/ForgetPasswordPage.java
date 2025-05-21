@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class ForgetPasswordPage {
 
 
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public ForgetPasswordPage (WebDriver driver){
         this.driver = driver;
@@ -14,11 +14,11 @@ public class ForgetPasswordPage {
 
 
     //Locators
-    private By passwordPage = By.linkText("Forgot Password");
-    private By headerText = By.xpath("//h2[text()= 'Forgot Password']");
-    private By mailField = By.xpath("//*[@name= 'email']");
-    private By submitButton = By.id("form_submit");
-    private By errorMessage = By.xpath("//h1[text()='Internal Server Error']");
+    private final By passwordPage = By.linkText("Forgot Password");
+    private final By headerText = By.xpath("//h2[text()= 'Forgot Password']");
+    private final By mailField = By.xpath("//*[@name= 'email']");
+    private final  By submitButton = By.id("form_submit");
+    private final By errorMessage = By.xpath("//h1[text()='Internal Server Error']");
 
 
 

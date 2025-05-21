@@ -24,6 +24,9 @@ public class UploadFilePage {
     private final By headerText = By.xpath("//h3[text() = 'File Uploader']");
     private final By upload = By.cssSelector("input[type='file']");
     private final By chooseFileButton = By.id("file-submit");
+    private final By headerTextAfterUpload = By.xpath("//h3[text() = 'File Uploaded!' ]");
+    private final By uploadedFile = By.id("uploaded-files");
+
 
 
 
@@ -50,6 +53,14 @@ public class UploadFilePage {
         WebElement submitButton = wait.until(ExpectedConditions.visibilityOfElementLocated(chooseFileButton));
         submitButton.click();
 
+    }
+
+    public String getHeaderTextAfterUpload (){
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(headerTextAfterUpload)).getText();
+    }
+
+    public String getUploadedFile (){
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(uploadedFile)).getText();
     }
 
 

@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 
 public class CheckBoxPage {
 
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public CheckBoxPage(WebDriver driver) {
         this.driver = driver;
@@ -16,10 +16,10 @@ public class CheckBoxPage {
     }
 
     // Locators
-    private By checkBoxPage = By.linkText("Checkboxes");
-    private By checkBoxHeader  = By.xpath("//h3[text()='Checkboxes']");
-    private By checkBox1 = By.xpath("//input[@type='checkbox'][1]");
-    private By checkBox2 = By.xpath("//input[@type='checkbox'][2]");
+    private final By checkBoxPage = By.linkText("Checkboxes");
+    private final By checkBoxHeader  = By.xpath("//h3[text()='Checkboxes']");
+    private final By checkBox1 = By.xpath("//input[@type='checkbox'][1]");
+    private final By checkBox2 = By.xpath("//input[@type='checkbox'][2]");
 
 
 
