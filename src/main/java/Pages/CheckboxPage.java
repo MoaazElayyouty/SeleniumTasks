@@ -5,18 +5,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
-public class CheckBoxPage {
+public class CheckboxPage {
 
     private final WebDriver driver;
 
-    public CheckBoxPage(WebDriver driver) {
+    public CheckboxPage(WebDriver driver) {
         this.driver = driver;
 
 
     }
 
     // Locators
-    private final By checkBoxPage = By.linkText("Checkboxes");
     private final By checkBoxHeader  = By.xpath("//h3[text()='Checkboxes']");
     private final By checkBox1 = By.xpath("//input[@type='checkbox'][1]");
     private final By checkBox2 = By.xpath("//input[@type='checkbox'][2]");
@@ -24,31 +23,28 @@ public class CheckBoxPage {
 
 
 
-    public void openCheckBoxPage (){
 
-        driver.findElement(checkBoxPage).click();
-    }
 
     public String getCheckBoxHeader (){
       return driver.findElement(checkBoxHeader).getText();
 
     }
-    public void selectCheckBox1 (){
+    public void clickFirstCheckbox (){
       WebElement element = driver.findElement(checkBox1);
 
         if (!element.isSelected()) {
             element.click();
         }
     }
-    public boolean isCheckBox1Selected (){
+    public boolean isFirstCheckboxSelected (){
         return driver.findElement(checkBox1).isSelected();
 
     }
-    public void unselectCheckBox2 (){
+    public void clickSecondCheckbox (){
         driver.findElement(checkBox2).click();
     }
 
-    public boolean isCheckBox2NotSelected (){
+    public boolean isSecondCheckboxSelected (){
         return driver.findElement(checkBox2).isSelected();
     }
 }

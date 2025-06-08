@@ -1,6 +1,5 @@
-package tasksSession1;
+package taskssession1;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,7 +11,6 @@ public class TaskSession1 {
     @Test
     public void validLogin() {
 
-        WebDriverManager.chromedriver().setup();
         WebDriver driver= new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://the-internet.herokuapp.com/");
@@ -34,7 +32,6 @@ public class TaskSession1 {
     @Test
     public void inValidLogin() {
 
-        WebDriverManager.chromedriver().setup();
         WebDriver driver= new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://the-internet.herokuapp.com/");

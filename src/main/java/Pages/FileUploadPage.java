@@ -9,23 +9,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 
-public class UploadFilePage {
+public class FileUploadPage {
 
-    public UploadFilePage (WebDriver driver){
+    public FileUploadPage(WebDriver driver){
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
     private final WebDriver driver;
     private final WebDriverWait wait;
 
     // Locators
-    private final By uploadPage = By.linkText("File Upload");
     private final By headerText = By.xpath("//h3[text() = 'File Uploader']");
     private final By upload = By.cssSelector("input[type='file']");
     private final By chooseFileButton = By.id("file-submit");
-    private final By headerTextAfterUpload = By.xpath("//h3[text() = 'File Uploaded!' ]");
-    private final By uploadedFile = By.id("uploaded-files");
 
 
 
@@ -38,31 +35,21 @@ public class UploadFilePage {
 
 
     // Methods
-    public void openUploadPage(){
-        driver.findElement(uploadPage).click();
-    }
+
 
     public String getHeaderText(){
         return driver.findElement(headerText).getText();
     }
 
-    public void uploadImage (){
+    public FileUploadSuccessPage  uploadImage (){
         WebElement uploadElement = wait.until(ExpectedConditions.visibilityOfElementLocated(upload));
         uploadElement.sendKeys("C:\\Users\\moaaz.elayyouty\\Downloads\\Image\\91231.jpg");
 
         WebElement submitButton = wait.until(ExpectedConditions.visibilityOfElementLocated(chooseFileButton));
         submitButton.click();
+        return new FileUploadSuccessPage(driver);
 
     }
-
-    public String getHeaderTextAfterUpload (){
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(headerTextAfterUpload)).getText();
-    }
-
-    public String getUploadedFile (){
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(uploadedFile)).getText();
-    }
-
 
 
 
