@@ -1,4 +1,4 @@
-package taskssession2;
+package Tests;
 
 import Pages.HomePage;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-package taskssession2;
+package Tests;
 
 import Pages.PasswordResetErrorPage;
 import Pages.ForgotPasswordPage;

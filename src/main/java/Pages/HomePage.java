@@ -22,6 +22,8 @@ public class HomePage {
 
     private final By uploadPage = By.linkText("File Upload");
 
+    private final By dynamicPage = By.linkText("Dynamic Loading");
+
 
     public LoginPage clickOnFormAuthenticationLink(){
         driver.findElement(formAuthenticationLink).click();
@@ -46,6 +48,16 @@ public class HomePage {
         driver.findElement(checkBoxLink).click();
         return new CheckboxPage(driver);
     }
+
+
+    public DynamicLoadingPage clickOnDynamicLoadingPage (){
+        driver.findElement(dynamicPage).click();
+        return new DynamicLoadingPage(driver);
+
+    }
+
+
+
 
 
 

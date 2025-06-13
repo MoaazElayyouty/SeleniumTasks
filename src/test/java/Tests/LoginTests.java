@@ -1,6 +1,5 @@
-package taskssession2;
+package Tests;
 
-import Pages.HomePage;
 import Pages.LoginPage;
 import Pages.SecureAreaPage;
 import org.testng.annotations.Test;

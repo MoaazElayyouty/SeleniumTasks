@@ -1,7 +1,6 @@
-package taskssession2;
+package Tests;
 
 import Pages.CheckboxPage;
-import Pages.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
