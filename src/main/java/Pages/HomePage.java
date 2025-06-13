@@ -24,6 +24,9 @@ public class HomePage {
 
     private final By dynamicPage = By.linkText("Dynamic Loading");
 
+    private final By dropDownLink = By.linkText("Dropdown");
+
+
 
     public LoginPage clickOnFormAuthenticationLink(){
         driver.findElement(formAuthenticationLink).click();
@@ -54,6 +57,11 @@ public class HomePage {
         driver.findElement(dynamicPage).click();
         return new DynamicLoadingPage(driver);
 
+    }
+
+    public DropDownPage clickOnDropDownLink(){
+        driver.findElement(dropDownLink).click();
+        return new DropDownPage(driver);
     }
 
 
