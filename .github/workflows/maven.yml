@@ -1,5 +1,5 @@
 on:
-  workflow_dispatch:  # ← دا اللي بيفتحلك زرار "Run workflow"
+  workflow_dispatch:  # زرار "Run workflow"
   push:
     branches: [ main ]
   pull_request:
@@ -24,3 +24,14 @@ jobs:
 
       - name: 🧪 Run TestNG Tests
         run: mvn test
+
+      - name: 📄 Show test report snippets
+        run: |
+          echo "Showing first 50 lines of test reports:"
+          head -n 50 target/surefire-reports/*.txt || echo "No test report files found."
+
+      - name: 📁 Upload Test Reports as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: surefire-reports
+          path: target/surefire-reports/
