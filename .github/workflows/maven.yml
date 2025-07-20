@@ -1,6 +1,5 @@
-name: Run TestNG Selenium Tests
-
 on:
+  workflow_dispatch:  # ← دا اللي بيفتحلك زرار "Run workflow"
   push:
     branches: [ main ]
   pull_request:
