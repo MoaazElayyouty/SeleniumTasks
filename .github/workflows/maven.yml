@@ -1,5 +1,5 @@
 on:
-  workflow_dispatch:  # ← دا اللي بيفتحلك زرار "Run workflow"
+  workflow_dispatch:
   push:
     branches: [ main ]
   pull_request:
@@ -13,11 +13,23 @@ jobs:
       - name: 📥 Checkout Code
         uses: actions/checkout@v3
 
-      - name: ☕ Set up Java
+      - name: Try to install OpenJDK 23
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openjdk-23-jdk || echo "OpenJDK 23 not found in repo"
+          java -version || echo "Java not installed"
+
+      - name: Set JAVA_HOME if OpenJDK 23 installed
+        run: echo "JAVA_HOME=/usr/lib/jvm/java-23-openjdk-amd64" >> $GITHUB_ENV
+
+      - name: ☕ Setup fallback Java 17 if JDK 23 not installed
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '17'
+
+      - name: Check Java version
+        run: java -version
 
       - name: 📦 Build Project
         run: mvn clean compile
